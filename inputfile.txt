@@ -1,0 +1,55 @@
+//This is a comment
+
+global declarations
+constants
+   define GOAL type integer = 100			//this is how many points we want to get to
+variables
+   define num type integer 
+
+implementations
+
+  function main
+    declarations
+    variables
+       define points_needed type integer
+    begin
+      set current_points = 0
+      set points_needed = GOAL - current_points		//points_needed is how many more points we need to reach our GOAL
+      set num = 5
+      display "Your current score is: " , current_points , ". You need " , points_needed , " more points to finish."
+      if 1 < num					//should be true
+      then
+        set current_points = current_points + 25
+        display "You earned 25 points!" , " Your current score is: " , current_points , ". You need " , points_needed , " more points to finish."
+      else
+        display "There was an error at step 1."
+      endif
+      if 8 >= num					//should be true
+      then
+        set current_points = current_points + 25
+        display "You earned 25 points!" , " Your current score is: " , current_points , ". You need " , points_needed , " more points to finish."
+      else
+        display "There was an error at step 2."
+      endif
+      set num = 3
+      if 3 == num					//should be true
+      then
+        set current_points = current_points + 25
+        display "You earned 25 points!" , " Your current score is: " , current_points , ". You need " , points_needed , " more points to finish."
+      else
+        display "There was an error at step 3."
+      endif
+      if 5 ~= num					//should be true
+      then
+        set current_points = current_points + 25
+        display "You earned 25 points!" , " Your current score is: " , current_points , ". You need " , points_needed , " more points to finish."
+      else
+        display "There was an error at step 4."
+      endif
+      if current_points == GOAL				//we should have 100 points now
+        then
+          display "Congratulations! You are finished!"
+      else
+          display "There was an error somewhere. You only have " , current_points , "points."
+      endif
+    endfun main
